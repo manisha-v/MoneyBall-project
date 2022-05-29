@@ -23,6 +23,7 @@ avail_players <- subset(combo, yearID == 2001)
 print(ggplot(avail_players, aes(OBP, salary))  + geom_point())
 
 avail_players <-  avail_players %>% filter(salary<8000000,OBP>0) %>% filter(AB >= 500)
+
 possible <- head(arrange(avail_players,desc(OBP)),10)
 possible <- possible[, c('playerID','OBP','SLG','AB')]
 print(possible)
